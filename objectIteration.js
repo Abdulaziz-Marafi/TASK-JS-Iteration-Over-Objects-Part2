@@ -53,27 +53,28 @@ const students = [
 
 // 1) Write a `getStudentName` function that accepts an argument of `student` object, return the student name
 function getStudentName(student) {
-  // write your code here...
+  return student.name;
 }
 // console.log(getStudentName(students[0]))
 
 // 2) Write a `getCourse` function that accepts a `student` object and `courseIndex` return the course at the specified course index in the student's courses array
 function getCourse(student, courseIndex) {
-  // write your code here...
+  return student.courses[courseIndex];
 }
 // console.log(getCourse(students[4], 2)); // Outputs: Music
 
 // 3) Write a `addCourseToStudent` function that accepts a `student` object and `course` string,
 // it will add the course to the student's courses array and return the `student` object
 function addCourseToStudent(student, course) {
-  // write your code here...
+  student.courses.push(course);
+  return student;
 }
 // console.log(addCourseToStudent(students[7], "Physics"));
 
 // 4) Write a `countCourses` function that accepts a `student` object
 // then returns the number of courses the student is enrolled in
 function countCourses(student) {
-  // write your code here...
+  return student.courses.length;
 }
 // console.log(countCourses(students[1])); // Outputs: 4
 
@@ -81,7 +82,8 @@ function countCourses(student) {
 // removes the `course` from the student's courses array,
 // then returns the `student` object.
 function removeCourseFromStudent(student, course) {
-  // write your code here...
+  student.courses = student.courses.filter((c) => c !== course);
+  return student;
 }
 // console.log(removeCourseFromStudent(students[6], "Science"));
 
@@ -89,7 +91,8 @@ function removeCourseFromStudent(student, course) {
 // and returns the student object with the matching id.
 // It should return undefinded if a student is not found
 function findStudentById(students, studentId) {
-  // write your code here...
+  let found = students.find((s) => s.id == studentId);
+  return found;
 }
 // console.log(findStudentById(students, 10));
 
